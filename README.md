@@ -1,95 +1,67 @@
 <div align="center">
-  
-  # Marian Glen Louis
-  
-  **Data Scientist | MLOps Practitioner | Computer Vision & NLP Engineer**
-  
-  <a href="https://glen-louis.netlify.app">Portfolio</a> • 
-  <a href="https://linkedin.com/in/marian-glen-louis">LinkedIn</a> • 
-  <a href="mailto:rockyglen86@gmail.com">Email</a>
 
+  # 👾 Hi, I'm Marian Glen Louis!
+
+  **Data Scientist & ML Engineer** *Turning chaotic data into structured logic.*
+  
   <br>
-
-  Currently completing a **Master of Science in Data Science** at the University at Buffalo (Dec 2025).  
-  Based in **Buffalo, NY**.
+  
+  <a href="https://linkedin.com/in/marian-glen-louis">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://glen-louis.netlify.app">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio"/>
+  </a>
+  <a href="mailto:rockyglen86@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
 
 </div>
 
----
+<br>
 
-### ⚓ Professional Summary
-
-I bridge the gap between complex model architecture and production deployment. With a background in Data Quality at **Wipro** and rigorous academic training at **UB**, I specialize in building end-to-end pipelines that are robust, scalable, and business-focused. My work spans Generative AI (RAG), Computer Vision, and Predictive Analytics, with a heavy emphasis on **AWS** cloud infrastructure and **CI/CD** workflows.
-
----
-
-### 🧬 Technical Arsenal
-
-| Domain | Technologies |
-| :--- | :--- |
-| **Languages & Core** | Python (Pandas, NumPy), SQL, R, SQLite |
-| **Deep Learning** | PyTorch, Keras, TensorFlow, Hugging Face, OpenCV, CLAHE |
-| **Generative AI** | OpenAI GPT-4.1, Llama-3, Qdrant Cloud, Gemini Embeddings, Groq LPU |
-| **MLOps & Cloud** | AWS (S3, EC2), Docker, Kubernetes, GitHub Actions, MLflow, Data Vault 2.0 |
-| **Web & API** | FastAPI, Uvicorn, Streamlit, Next.js, Supabase, Pydantic |
-| **Analytics** | Tableau, Power BI, Recharts, RFM Analysis, Snowflake |
+### 🛸 About Me
+I am a Master's student at **UB (SUNY)** graduating in **Dec 2025**. I don't just build models; I build **systems**. My passion lies in taking a raw concept—whether it's financial tracking or document auditing—and engineering a full-stack solution around it using **AWS**, **LLMs**, and **MLOps** best practices.
 
 ---
 
-### ⚡ Featured Projects
+### 🧩 The Tech Stack
 
-#### **AuditAI: Autonomous RAG Engine**
-*Llama-3, Qdrant, Google Gemini API*
-* Developed a router-first RAG system to automate **NIST Cybersecurity Framework auditing** with **94% accuracy**.
-* Engineered a semantic classification layer to route queries, reducing retrieval costs by 40%.
-* Solved memory constraints on microservices using a hybrid embedding strategy (Local CPU + Cloud API).
+**Languages & Core** ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
 
-#### **FinBuddy: AI Personal Finance Tracker**
-*OpenAI GPT-4.1, OCR, Recharts*
-* Full-stack platform utilizing GPT-4 for predictive analytics on user spending.
-* Achieved **90% accuracy** in OCR receipt extraction and automated expense logging.
-* Reduced user analysis time by 80% through interactive dashboards and anomaly detection.
+**AI & Machine Learning** ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI_GPT4-412991?style=flat-square&logo=openai&logoColor=white)
+![HuggingFace](https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
 
-#### **Citi Bike Trip Forecasting (MLOps)**
-*AWS (EC2/S3), LightGBM, GitHub Actions*
-* Production-grade pipeline forecasting hourly bike demand in NYC.
-* Implemented **CI/CD** workflows reducing model update times from hours to minutes.
-* Achieved <50 trips/hour MAE with a 168-hour forward-looking horizon.
+**Cloud & DevOps** ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
-#### **VisionTalk: Image-to-Speech Pipeline**
-*PyTorch, Transformers, ResNet18*
-* Multimodal pipeline converting images to natural speech.
-* Reduced inference time by 25% using a ResNet18 classifier for image pre-processing.
-* Improved speech naturalness by 30% by fine-tuning a T5 model for grammar restoration.
-
-#### **Supply Chain Optimization**
-*LightGBM, RandomizedSearchCV*
-* Processed **58M+ rows** to engineer 20+ temporal features for inventory modeling.
-* Simulated a reorder strategy demonstrating a potential **20%+ revenue lift**.
-* Advised executive strategy by proving full safety stock implementation was cost-prohibitive.
+**Web & Data Engineering** ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat-square&logo=snowflake&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
 
 ---
 
-### ♟️ Professional Experience
+### 🔮 Selected Projects
 
-**Data Quality Analyst** | *Wipro Technologies (Client: ManpowerGroup)*
-*May 2022 – Aug 2024*
-* **Automation:** Scripted Python validation tools reducing manual QA effort by **40%**.
-* **Architecture:** Spearheaded **Data Vault 2.0** adoption to accelerate ETL workflows.
-* **Leadership:** Mentored associates on data integrity and Snowflake/Power BI reconciliation.
-
-**Machine Learning Intern** | *Prinston Smart Engineers*
-*Oct 2020 – Dec 2020*
-* Executed supervised and unsupervised learning algorithms on real-world datasets.
+| Project | Description | Stack |
+| :--- | :--- | :--- |
+| **AuditAI** | **Autonomous RAG Engine.** Automates NIST cybersecurity auditing with 94% accuracy using a Router-First architecture to switch between Llama-3 and Gemini. | `Llama-3` `Qdrant` `Gemini` |
+| **FinBuddy** | **AI Personal Finance.** Full-stack platform using GPT-4.1 for predictive analytics and OCR to digitize receipts and forecast spending. | `GPT-4` `React` `OCR` |
+| **Citi Bike Ops** | **End-to-End MLOps.** Production pipeline on AWS predicting bike demand. Includes automated CI/CD retraining and real-time inference. | `AWS` `LightGBM` `Docker` |
+| **Supply Chain Opt** | **Inventory Logic.** Processed 58M+ rows to optimize safety stock levels, proving a path to 20%+ revenue lift for a retailer. | `Big Data` `Analytics` |
 
 ---
 
-### 📜 Certifications
-* **Google Cloud:** Associate Cloud Engineer
-* **Google:** Crash Course on Python & OS Interaction
-* **Udemy:** Machine Learning A-Z (Python & R)
-
----
 <div align="center">
-  <sub>Values: Precision • Scalability • Data Integrity</sub>
+  <img src="https://github-readme-stats.vercel.app/api?username=rockyglen&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
+  <br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockyglen&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
 </div>
