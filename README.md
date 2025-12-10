@@ -1,67 +1,149 @@
 <div align="center">
 
-  # 👾 Hi, I'm Marian Glen Louis!
+  # Hi there, I'm Marian Glen Louis! 👋
+  
+  <h3>Data Scientist | MLOps Engineer | GenAI Practitioner</h3>
 
-  **Data Scientist & ML Engineer** *Turning chaotic data into structured logic.*
-  
+  <p>
+    <em>Building scalable AI systems that bridge the gap between research and production.</em>
+  </p>
+
   <br>
-  
+
   <a href="https://linkedin.com/in/marian-glen-louis">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://glen-louis.netlify.app">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio"/>
+    <img src="https://img.shields.io/badge/Portfolio-View_Work-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio"/>
   </a>
   <a href="mailto:rockyglen86@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
 
 </div>
 
 <br>
+<br>
 
-### 🛸 About Me
-I am a Master's student at **UB (SUNY)** graduating in **Dec 2025**. I don't just build models; I build **systems**. My passion lies in taking a raw concept—whether it's financial tracking or document auditing—and engineering a full-stack solution around it using **AWS**, **LLMs**, and **MLOps** best practices.
+## 👨‍💻 About Me
 
----
+I am a final-semester **Master’s student in Data Science** at the **University at Buffalo**, specializing in building end-to-end machine learning pipelines. 
 
-### 🧩 The Tech Stack
-
-**Languages & Core** ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
-
-**AI & Machine Learning** ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI_GPT4-412991?style=flat-square&logo=openai&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-
-**Cloud & DevOps** ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
-
-**Web & Data Engineering** ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat-square&logo=snowflake&logoColor=white)
-![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)
+Previously, I worked as a **Data Quality Analyst at Wipro**, where I led automation initiatives that reduced manual QA effort by 40%. My current focus is on **Generative AI (RAG)**, **Computer Vision**, and **Cloud Infrastructure (AWS)**. I don't just train models; I deploy them into robust, production-ready applications.
 
 ---
 
-### 🔮 Selected Projects
+## 🛠️ The Tech Stack
 
-| Project | Description | Stack |
-| :--- | :--- | :--- |
-| **AuditAI** | **Autonomous RAG Engine.** Automates NIST cybersecurity auditing with 94% accuracy using a Router-First architecture to switch between Llama-3 and Gemini. | `Llama-3` `Qdrant` `Gemini` |
-| **FinBuddy** | **AI Personal Finance.** Full-stack platform using GPT-4.1 for predictive analytics and OCR to digitize receipts and forecast spending. | `GPT-4` `React` `OCR` |
-| **Citi Bike Ops** | **End-to-End MLOps.** Production pipeline on AWS predicting bike demand. Includes automated CI/CD retraining and real-time inference. | `AWS` `LightGBM` `Docker` |
-| **Supply Chain Opt** | **Inventory Logic.** Processed 58M+ rows to optimize safety stock levels, proving a path to 20%+ revenue lift for a retailer. | `Big Data` `Analytics` |
+<table align="center">
+  <tr>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=python" width="48" height="48" alt="Python" /><br>Python
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=pytorch" width="48" height="48" alt="PyTorch" /><br>PyTorch
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=tensorflow" width="48" height="48" alt="TensorFlow" /><br>TensorFlow
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=aws" width="48" height="48" alt="AWS" /><br>AWS
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=docker" width="48" height="48" alt="Docker" /><br>Docker
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=kubernetes" width="48" height="48" alt="K8s" /><br>K8s
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=fastapi" width="48" height="48" alt="FastAPI" /><br>FastAPI
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=postgres" width="48" height="48" alt="SQL" /><br>SQL
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=r" width="48" height="48" alt="R" /><br>R
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=git" width="48" height="48" alt="Git" /><br>Git
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=githubactions" width="48" height="48" alt="Actions" /><br>Actions
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="NextJS" /><br>Next.js
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=supabase" width="48" height="48" alt="Supabase" /><br>Supabase
+    </td>
+    <td align="center" width="90">
+      <img src="https://skillicons.dev/icons?i=tableau" width="48" height="48" alt="Tableau" /><br>Tableau
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🧠 Generative AI & NLP Projects
+
+### 🤖 **[AuditAI: Autonomous RAG Engine](https://github.com/rockyglen/audit-ai-backend)** *An automated auditor for the NIST Cybersecurity Framework.*
+* **Tech:** Llama-3-70b, Qdrant Vector DB, Google Gemini API.
+* **Impact:** Achieved **94% accuracy** in regulatory auditing. 
+* **Innovation:** Built a "Router-First" architecture to switch between cheap/fast models and powerful reasoning models, cutting costs by 40%.
+
+### 💸 **FinBuddy: AI Personal Finance Tracker**
+*A full-stack financial advisor that sees and speaks.*
+* **Tech:** OpenAI GPT-4.1, OCR, Recharts, React.
+* **Impact:** **90% accuracy** in OCR receipt scanning.
+* **Innovation:** Uses GPT-4 to analyze transaction history and auto-generate spending advice and budget categorization.
+
+### 🗣️ **VisionTalk: Image-to-Speech Pipeline**
+*Converting visual world data into natural speech.*
+* **Tech:** PyTorch, Hugging Face Transformers, ResNet18.
+* **Impact:** Reduced inference time by **25%** using a classifier pre-filter.
+* **Innovation:** Fine-tuned T5 models to restore grammar to broken OCR text before converting to speech.
+
+---
+
+## ⚙️ MLOps & Production Engineering
+
+### 🚲 **[Citi Bike Forecasting Pipeline](https://github.com/rockyglen)**
+*End-to-end forecasting on AWS.*
+* **Tech:** AWS (S3, EC2), LightGBM, GitHub Actions, Docker.
+* **Key Feature:** Fully automated **CI/CD workflow** that retrains and deploys the model in minutes when new data arrives.
+* **Result:** <50 trips/hour Mean Absolute Error for NYC bike demand.
+
+### 📡 **Sentiment Analysis MLOps Pipeline**
+*Zero-downtime deployment system.*
+* **Tech:** FastAPI, Docker Hub, AWS EC2, automated Cron Jobs.
+* **Key Feature:** Implemented a Continuous Deployment (CD) pipeline that pushes Docker containers to production servers via SSH automatically.
+
+---
+
+## 👁️ Computer Vision & Analytics
+
+### 🍃 **AI-Powered Crop Health Monitoring**
+* **Stack:** CNNs (Keras), Transfer Learning (VGG16), Streamlit.
+* **Detail:** Achieved **98% accuracy** in classifying leaf diseases; deployed as a real-time web app for farmers.
+
+### 📦 **Supply Chain Optimization**
+* **Stack:** Python, LightGBM, RandomizedSearchCV.
+* **Detail:** Processed **58M+ rows** of retail data to optimize safety stock, projecting a **20% revenue lift**.
+
+---
+
+## 💼 Experience
+
+**Data Quality Analyst** @ *Wipro Technologies* (2022 - 2024)
+* Automated data validation using Python, cutting manual work by **40%**.
+* Implemented **Data Vault 2.0** for scalable warehousing.
+* Managed reconciliation between Snowflake and Power BI for executive dashboards.
 
 ---
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rockyglen&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
-  <br>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockyglen&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=rockyglen&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rockyglen&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="Top Languages" />
 </div>
