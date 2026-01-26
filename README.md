@@ -8,7 +8,7 @@ I am a **Master of Science in Data Science** graduate from the **University at B
 
 ## 🚀 Featured Projects
 
-### 🛡️ [Aegis-Flow: Multi-Agent Cloud Security](https://github.com/your-username/aegis-flow)
+### 🛡️ [Aegis-Flow: Multi-Agent Cloud Security](https://github.com/rockyglen/aegis-flow)
 **Autonomous Multi-Agent framework** built with **LangGraph** to audit and remediate AWS security threats in real-time.
 * **Tech:** LangChain, Model Context Protocol (MCP), Google Gemini, Terraform, FastAPI, Next.js.
 * **Key Achievement:** Engineered a "Safety Gate" protocol for Human-in-the-Loop authorization before agents execute infrastructure changes via Terraform.
@@ -47,8 +47,8 @@ I am a **Master of Science in Data Science** graduate from the **University at B
 
 ## 📊 GitHub Stats
 
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=transparent)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=your-username&layout=compact&theme=transparent)
+![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=rockyglen&show_icons=true&theme=transparent)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rockyglen&layout=compact&theme=transparent)
 
 ---
 
