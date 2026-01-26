@@ -13,12 +13,12 @@ I am a **Master of Science in Data Science** graduate from the **University at B
 * **Tech:** LangChain, Model Context Protocol (MCP), Google Gemini, Terraform, FastAPI, Next.js.
 * **Key Achievement:** Engineered a "Safety Gate" protocol for Human-in-the-Loop authorization before agents execute infrastructure changes via Terraform.
 
-### 🔍 [AuditAI: Agentic RAG Compliance Engine](https://github.com/your-username/audit-ai)
+### 🔍 [AuditAI: Agentic RAG Compliance Engine](https://github.com/rockyglen/audit-ai-backend)
 **Router-first RAG engine** for NIST Cybersecurity Framework auditing.
 * **Tech:** Llama 3, Qdrant, LangGraph, Semantic Router, Ragas.
 * **Key Achievement:** Achieved **90.1% Faithfulness** score using Gemini 3 Flash as a 'Judge' for production evaluation.
 
-### ⚙️ [End-to-End MLOps Pipeline](https://github.com/your-username/mlops-sentiment)
+### ⚙️ [End-to-End MLOps Pipeline](https://github.com/rockyglen/sentiment_analysis_mlops)
 **Production-ready sentiment analysis** with full CI/CD and monitoring.
 * **Tech:** Docker, GitHub Actions, AWS EC2, DVC, Great Expectations, MLflow.
 * **Key Achievement:** Integrated automated Data Drift detection and model retraining triggers, ensuring zero-downtime continuous deployment.
@@ -54,8 +54,8 @@ I am a **Master of Science in Data Science** graduate from the **University at B
 
 ## 📫 Let's Connect!
 
-- 💼 [LinkedIn](https://linkedin.com/in/your-profile)
-- 📧 [Email](mailto:your-email@buffalo.edu)
-- 🌐 [Portfolio/Blog](https://your-portfolio.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/marian-glen-louis)
+- 📧 [Email](rockyglen86@gmail.com)
+- 🌐 [Portfolio/Blog](https://glen-louis.vercel.app)
 
 *"Building the bridge between static models and autonomous agents."*
