@@ -1,61 +1,63 @@
-# Hi, I’m Glen 👋 
+# Hi there, I'm Glen! 🚀
 
-### AI Engineer | Agentic AI Specialist | MLOps Enthusiast
+I am an **AI Engineer & MLOps Specialist** currently completing my **MS in Data Science at the University at Buffalo**. I specialize in bridging the gap between experimental LLM research and resilient, self-healing production infrastructure.
 
-I am a **Master of Science in Data Science** graduate from the **University at Buffalo** with a focus on building autonomous, self-healing AI systems and production-grade ML pipelines. I specialize in **Agentic RAG**, **Multi-Agent Orchestration**, and **Infrastructure-as-Code** for AI.
-
----
-
-## 🚀 Featured Projects
-
-### 🛡️ [Aegis-Flow: Multi-Agent Cloud Security](https://github.com/rockyglen/aegis-flow)
-**Autonomous Multi-Agent framework** built with **LangGraph** to audit and remediate AWS security threats in real-time.
-* **Tech:** LangChain, Model Context Protocol (MCP), Google Gemini, Terraform, FastAPI, Next.js.
-* **Key Achievement:** Engineered a "Safety Gate" protocol for Human-in-the-Loop authorization before agents execute infrastructure changes via Terraform.
-
-### 🔍 [AuditAI: Agentic RAG Compliance Engine](https://github.com/rockyglen/audit-ai-backend)
-**Router-first RAG engine** for NIST Cybersecurity Framework auditing.
-* **Tech:** Llama 3, Qdrant, LangGraph, Semantic Router, Ragas.
-* **Key Achievement:** Achieved **90.1% Faithfulness** score using Gemini 3 Flash as a 'Judge' for production evaluation.
-
-### ⚙️ [End-to-End MLOps Pipeline](https://github.com/rockyglen/sentiment_analysis_mlops)
-**Production-ready sentiment analysis** with full CI/CD and monitoring.
-* **Tech:** Docker, GitHub Actions, AWS EC2, DVC, Great Expectations, MLflow.
-* **Key Achievement:** Integrated automated Data Drift detection and model retraining triggers, ensuring zero-downtime continuous deployment.
+My work focuses on building **autonomous multi-agent frameworks**, **agentic RAG architectures**, and **automated MLOps pipelines** that prioritize reliability, security, and observability.
 
 ---
 
-## 🛠️ Technical Stack
+### 🛠 Technical Toolbox
 
 | Category | Tools & Technologies |
 | :--- | :--- |
-| **Agentic AI** | LangGraph, LangChain, Agentic RAG, MCP, LangSmith, CrewAI |
-| **LLMs / ML** | Llama 3, GPT-4o, Gemini, PyTorch, Scikit-learn, LightGBM |
-| **MLOps / Cloud** | Docker, Terraform, AWS (S3, EC2, VPC), DVC, MLflow, GitHub Actions |
-| **Backend / DB** | FastAPI, Python, SQL, Qdrant (Vector DB), Supabase, Snowflake |
-| **Frontend** | Next.js 15, React 19, TypeScript, Tailwind CSS |
+| **AI & LLM Orchestration** | LangGraph, LangChain, Model Context Protocol (MCP), Agentic RAG, Llama 3, GPT-4o, Gemini |
+| **MLOps & Infrastructure** | Docker, Terraform (IaC), GitHub Actions (CI/CD), DVC, MLflow, Prefect, Hopsworks |
+| **Data & Vector Engineering** | Python, SQL, Qdrant, Supabase (pgvector), Great Expectations, Pandera, DBT |
+| **Backend & Cloud** | FastAPI, Next.js 14/15, WebSockets, AWS (S3, EC2, IAM, VPC), Serverless Functions |
+| **Evaluation & Monitoring** | Ragas (LLM-as-a-Judge), EvidentlyAI (Drift Detection), PyTorch, Scikit-learn, LightGBM |
 
 ---
 
-## 📈 Experience & Education
+### 🌟 Featured AI & MLOps Projects
 
-* 🎓 **M.S. in Data Science** | University at Buffalo, SUNY (Dec 2025)
-* 🏢 **Data Scientist Intern** | Nissha Medical Technologies (Computer Vision & Predictive Maintenance)
-* 🏢 **Data Quality Engineer** | Wipro Technologies (Data Validation Frameworks & ETL Optimization)
+#### 🤖 [Aegis-Flow: Multi-Agent Cloud Security Orchestrator](https://github.com/)
+* **The Goal:** Build an autonomous, self-healing Cloud SOC to audit and remediate AWS threats in real-time.
+* **The Tech:** LangGraph, MCP, Terraform, AWS, FastAPI, Next.js.
+* **The Win:** Developed a multi-agent framework capable of detecting misconfigurations (e.g., public S3 buckets) and autonomously patching them via Terraform, featuring a **Human-in-the-Loop Safety Gate** to authorize critical infrastructure changes.
+
+#### ⚖️ [AuditAI: Agentic RAG Compliance Engine](https://github.com/)
+* **The Goal:** Automate NIST Cybersecurity Framework auditing with zero-hallucination outputs.
+* **The Tech:** Llama-3, Qdrant, Semantic Router, Ragas, Google Gemini Embeddings.
+* **The Win:** Implemented a **Semantic Router** to reduce computational overhead by 40% and a **Hallucination Guardrail** layer that triggers a "Missing Information" protocol, achieving a **90.1% Faithfulness score** on gold-standard audit datasets.
+
+#### 📈 [Reliable Forecaster: Enterprise MLOps Pipeline](https://github.com/)
+* **The Goal:** Automated batch inference for daily sales forecasting across 1,115 retail locations.
+* **The Tech:** Prefect, Hopsworks (Feature Store), Terraform, Pandera, LightGBM, AWS.
+* **The Win:** Architected a reproducible MLOps infrastructure using **Terraform** and enforced strict data integrity using **Pandera data contracts**, preventing silent failures in the training pipeline.
+
+#### 📊 [End-to-End MLOps Pipeline for Sentiment Analysis](https://github.com/)
+* **The Goal:** Automate the full ML lifecycle for sentiment analysis models to support real-time, high-throughput inference streams.
+* **The Tech:** Docker, GitHub Actions (CI/CD), FastAPI, AWS EC2, DVC, Great Expectations.
+* **The Win:** Deployed highly scalable microservices with robust monitoring and alerting frameworks for early detection of model drift, significantly improving inference speeds, continuous performance tracking, and deployment reliability.
 
 ---
 
-## 📊 GitHub Stats
+### 📈 Professional Experience
 
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=rockyglen&show_icons=true&theme=transparent)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rockyglen&layout=compact&theme=transparent)
+* **Data Scientist Intern (Capstone) @ Nissha Medical Technologies** (Aug 2025 – Dec 2025)
+    * Developed an end-to-end vision system using **YOLOv8** and **OpenCV** to inspect 30M+ daily tickets.
+    * Transitioned the facility to a predictive maintenance model, significantly reducing machine downtime through real-time defect alerts.
+
+* **Data Reliability Engineer @ Wipro Technologies** (May 2022 – Aug 2024)
+    * Engineered Python-based validation frameworks to automate verification of large-scale data migrations from SQL Server to **Snowflake**.
+    * Acted as the primary gatekeeper for data quality, reconciling frontend Power BI metrics with backend cloud records.
 
 ---
 
-## 📫 Let's Connect!
+### 📬 Connect with Me
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/marian-glen-louis)
-- 📧 [Email](rockyglen86@gmail.com)
-- 🌐 [Portfolio/Blog](https://glen-louis.vercel.app)
+* 🎓 **Education:** MS in Data Science @ University at Buffalo (Dec 2025)
+* 🔭 **Current Focus:** Building production-ready Agents using the Model Context Protocol (MCP) and scaling ML infrastructure.
+* 💬 **Ask me about:** Why `Agentic RAG` beats naive RAG, or how to automate cloud security with LLMs.
 
-*"Building the bridge between static models and autonomous agents."*
+---
