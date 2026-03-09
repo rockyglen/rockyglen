@@ -7,7 +7,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Marian_Glen_Louis-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marian-glen-louis)
 [![Portfolio](https://img.shields.io/badge/Portfolio-glen--louis.vercel.app-black?style=for-the-badge&logo=vercel&logoColor=white)](https://glen-louis.vercel.app)
-[![Email](https://img.shields.io/badge/Email-rockyglen86@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:glen.louis08@gmail.com)
+[![Email](https://img.shields.io/badge/Email-glen.louis08@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:glen.louis08@gmail.com)
 
 </div>
 
