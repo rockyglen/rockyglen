@@ -5,8 +5,8 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marian-glen-louis)
 [![Portfolio](https://img.shields.io/badge/Portfolio-View_My_Work-black?style=for-the-badge&logo=vercel&logoColor=white)](https://glen-louis.vercel.app)
-[![Email](https://img.shields.io/badge/Email-Hire_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rockyglen86@gmail.com)
-[![Phone](https://img.shields.io/badge/Phone-716--709--1834-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:7167091834)
+[![Email](https://img.shields.io/badge/Email-Hire_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:glen.louis08@gmail.com)
+
 
 ### 🟢 Open to Work — AI Engineer · MLOps Engineer · Data Scientist
 
@@ -145,6 +145,6 @@ A production-grade demand forecasting system for NYC's Citi Bike fleet — solvi
 
 ### 🟢 Available for full-time roles — AI Engineer · MLOps Engineer · Data Scientist
 
-📧 rockyglen86@gmail.com &nbsp;|&nbsp; 📞 716-709-1834 &nbsp;|&nbsp; 🌐 [glen-louis.vercel.app](https://glen-louis.vercel.app)
+📧 rockyglen86@gmail.com &nbsp;|&nbsp;  &nbsp;|&nbsp; 🌐 [glen-louis.vercel.app](https://glen-louis.vercel.app)
 
 </div>
