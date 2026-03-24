@@ -134,8 +134,8 @@ A production-grade demand forecasting system for NYC's Citi Bike fleet — solvi
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rockyglen&show_icons=true&theme=default&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rockyglen&layout=compact&theme=default&hide_border=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=glenlouis8&show_icons=true&theme=default&hide_border=true&count_private=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=glenlouis8&layout=compact&theme=default&hide_border=true)
 
 </div>
 
