@@ -145,6 +145,6 @@ A production-grade demand forecasting system for NYC's Citi Bike fleet — solvi
 
 ### 🟢 Available for full-time roles — AI Engineer · MLOps Engineer · Data Scientist
 
-📧 rockyglen86@gmail.com &nbsp;|&nbsp;  &nbsp;|&nbsp; 🌐 [glen-louis.vercel.app](https://glen-louis.vercel.app)
+📧 glen.louis08@gmail.com &nbsp;|&nbsp;  &nbsp;|&nbsp; 🌐 [glen-louis.vercel.app](https://glen-louis.vercel.app)
 
 </div>
