@@ -237,14 +237,15 @@ An end-to-end fine-tuning, evaluation, and deployment pipeline for Llama-3.2-3B-
 
 <div align="center">
 
-[![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=glenlouis8&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+[![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=glenlouis8&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=4&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=glenlouis8&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=glenlouis8&layout=compact&theme=tokyonight&hide_border=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=glenlouis8&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=1800)
+&nbsp;
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=glenlouis8&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800)
 
 </div>
 
