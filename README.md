@@ -36,9 +36,9 @@ My background in **Data Reliability Engineering at Wipro** (2 years, Bengaluru) 
 |---|---|
 | 🤖 **Agentic AI Systems** | Built multi-agent orchestrators with LangGraph + MCP deployed against live AWS infra |
 | 📊 **Production MLOps** | End-to-end automated pipelines: ingestion → training → deployment → monitoring |
-| 🔍 **RAG & LLM Engineering** | 1.00 Faithfulness score on compliance RAG system evaluated with RAGAS |
+| 🔍 **RAG & LLM Engineering** | 96.7% Faithfulness on compliance RAG system evaluated with RAGAS across 33 adversarial Qs |
 | ☁️ **Cloud & Infrastructure** | AWS (IAM, S3, EC2, VPC), Docker, Terraform, GitHub Actions CI/CD |
-| 📉 **Measurable Impact** | 85% dashboard latency reduction; 5.1 MAE maintained across automated retraining cycles |
+| 📉 **Measurable Impact** | 85% dashboard latency reduction; 8x scan speedup via parallel agent execution |
 | 🧬 **Rare Skill Set** | LangGraph · MCP · CRAG · Agentic RAG — expertise most teams are still building toward |
 
 ---
@@ -51,6 +51,7 @@ My background in **Data Reliability Engineering at Wipro** (2 years, Bengaluru) 
 
 [![LangGraph](https://img.shields.io/badge/LangGraph-FF6B6B?style=for-the-badge&logo=langchain&logoColor=white)](https://www.langchain.com/langgraph)
 [![MCP](https://img.shields.io/badge/Model_Context_Protocol-5B8CFF?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io)
+[![LangSmith](https://img.shields.io/badge/LangSmith-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://smith.langchain.com)
 [![Anthropic](https://img.shields.io/badge/Anthropic_API-D97706?style=for-the-badge&logo=anthropic&logoColor=white)](https://anthropic.com)
 [![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com)
 [![Groq](https://img.shields.io/badge/Groq-F54B27?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com)
@@ -85,20 +86,22 @@ My background in **Data Reliability Engineering at Wipro** (2 years, Bengaluru) 
 > Each project below is production-grade, end-to-end, and on GitHub.
 
 <details open>
-<summary><h3>🔐 Aegis-Flow — Multi-Agent Cloud Security Orchestrator</h3></summary>
+<summary><h3>🔐 Remedi — Agentic AWS Security Scanner & Auto-Remediator</h3></summary>
 
-**`LangGraph` `MCP` `AWS IAM/S3/EC2/VPC` `Google Gemini` `Human-in-the-Loop` `Docker` `FastAPI`**
+**`LangGraph` `MCP` `AWS IAM/S3/EC2/VPC/RDS/Lambda/CloudTrail` `Google Gemini` `Human-in-the-Loop` `Docker` `FastAPI` `Terraform`**
 
-An autonomous AI system that audits AWS infrastructure for security risks, proposes remediations, requests human approval, executes fixes, and verifies success — all without manual intervention.
+A full-stack agentic security platform that scans an AWS account across 8 services, generates a findings report, waits for human approval, auto-remediates every vulnerability, then runs a verification pass — all orchestrated by a 5-stage LangGraph pipeline with 8 parallel specialist sub-agents.
 
-- Engineered a multi-agent LLM pipeline (LangGraph + Claude Sonnet) that autonomously detects and remediates AWS security misconfigurations with a **100% remediation success rate** and post-fix verification pass rate across all completed scans
-- Reduced Mean Time to Detect to **34s** and Mean Time to Remediate to **83s** by designing a stateful agent graph with parallel audit nodes, structured tool dispatch, and a recursion limit guard to prevent runaway inference loops
-- Optimized LLM inference cost to **~$0.04 per full security scan** (27K tokens) by engineering targeted system prompts and filtering tool arguments against live MCP schema to eliminate hallucinated parameters
-- Implemented a **human-in-the-loop safety gate** within the agent loop that intercepts the model's remediation plan pre-execution — achieving 100% operator-reviewed fix rate with zero unauthorized automated changes
+- Architected 8-parallel-agent orchestration layer using **LangGraph** and **ThreadPoolExecutor** — spawning one specialist sub-agent per AWS service (IAM, S3, EC2, VPC, RDS, Lambda, CloudTrail, Security Groups) with isolated tool sets and LLM loops; parallel execution cuts scan time **~8x** vs. sequential
+- Implemented 5-stage interrupt-based state machine (Orchestrator → Report Generator → Safety Gate → Remediator → Verifier) with **LangGraph's `interrupt_before`** checkpoint — zero AWS changes execute without explicit operator approval; agent auto-remediates **100% of detected vulnerabilities** after single sign-off
+- Engineered custom **MCP server** subprocess (JSON-RPC over stdio) isolating all boto3 calls from LangGraph; background asyncio event loop bridges async MCP protocol to synchronous **LangGraph ToolNode** — prevents event-loop conflicts across 8 concurrent agent threads
+- Built real-time streaming dashboard — **Next.js** frontend consumes **StreamingResponse** events, parsing `[SCAN]` / `[EXEC]` / `[ACTION_REQUIRED]` tokens across 5 distinct UI states for live scan progress
+- Reduced per-scan LLM cost to **~$0.02** using **Gemini 2.0 Flash**; mapped **8 CIS AWS Foundations Benchmark controls** with per-control pass/fail and aggregate compliance scoring in **PostgreSQL**
+- Implemented 3-layer credential security: **Fernet** encryption at rest, 30-min inactivity purge, explicit wipe on sign-out — zero plaintext credentials touch disk
 
-> *This isn't a chatbot. It's a working autonomous agent operating on real infrastructure with safety controls — the kind of system that replaces expensive manual security audits.*
+> *Not a chatbot. A working autonomous agent operating on real infrastructure with safety controls — the kind of system that replaces expensive manual security audits.*
 
-[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/ageis-flow)
+[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/remedi)
 
 </details>
 
@@ -107,14 +110,16 @@ An autonomous AI system that audits AWS infrastructure for security risks, propo
 <details open>
 <summary><h3>📋 AuditAI — Agentic RAG Compliance Engine</h3></summary>
 
-**`LangGraph` `CRAG` `Qdrant` `Llama-3.3 70B` `FastAPI` `Ragas` `Docker`**
+**`LangGraph` `CRAG` `Qdrant Cloud` `Google Gemini` `FastAPI` `RAGAS` `Docker`**
 
-A self-correcting AI system that audits company policies against the NIST Cybersecurity Framework — autonomously, with verified accuracy.
+A production agentic compliance engine using LangGraph and Corrective RAG (CRAG) to audit organizational policies against 4 major cybersecurity frameworks simultaneously: NIST CSF 2.0, NIST SP 800-53 Rev 5, ISO 27001:2022, and SOC 2 Trust Services Criteria.
 
-- Built a **Corrective RAG (CRAG)** agent with a self-healing 4-node pipeline that automatically rewrites failed queries up to 3x, achieving **100% Faithfulness** and **90% Context Recall** across 10 RAGAS-evaluated NIST Q&A pairs
-- Engineered a real-time token-streaming API with **FastAPI** (NDJSON/SSE) over a stateful LangGraph graph — all evaluation metrics passing **≥0.7 threshold**
-- Designed a **semantic query router** with 3-turn conversation history that classifies intent before graph invocation, reducing unnecessary agentic calls while maintaining **76.4% Answer Relevancy**
-- Full RAG eval pipeline across **50 ground-truth NIST Q&A pairs**: **78.4% Context Precision · 76.4% Answer Relevancy · 90% Context Recall · 100% Faithfulness**
+- Engineered **Corrective RAG** pipeline using **LangGraph** state machine with LLM-as-judge document grading and autonomous query reformulation loop (up to 3 retries before fallback), auditing policies simultaneously against **NIST CSF 2.0**, **NIST SP 800-53**, **ISO 27001:2022**, and **SOC 2**
+- Parallelized retrieval across all 4 framework indexes via **ThreadPoolExecutor** and document grading via **asyncio.gather** — worst-case grading latency equals 1 LLM call regardless of chunk count; equal framework representation guaranteed
+- Built semantic cache in second **Qdrant Cloud** collection at cosine similarity threshold 0.93 — near-duplicate queries skip the full graph, delivering near-instant response at zero LLM cost
+- Implemented intent-based semantic router classifying conversational vs. compliance queries before vector store access, reducing unnecessary LLM calls by **~40%**
+- Engineered page-level citation system linking every answer to exact source document and page number — zero phantom citations via 6-pattern refusal-phrase detection on low-confidence generations
+- Built automated **RAGAS** evaluation harness across **33 adversarial questions** spanning all 4 frameworks — Faithfulness **96.7%** · Context Recall **100%** · Context Precision **79.4%** · Answer Relevancy **77.6%**
 
 > *Compliance is a billion-dollar problem. This system automates what typically requires expensive consultants, with measurable, auditable accuracy.*
 
@@ -167,14 +172,16 @@ A cloud-native MLOps system monitoring live F1 telemetry across 22 concurrent st
 <details open>
 <summary><h3>🚲 Citi Bike Demand Forecaster — Live 24-Hour Prediction Pipeline</h3></summary>
 
-**`LightGBM` `GitHub Actions` `Evidently AI` `MLflow` `AWS S3` `Next.js 14` `Hopsworks`**
+**`LightGBM` `GitHub Actions` `Evidently AI` `MLflow` `AWS S3` `Next.js` `Hopsworks`**
 
-A production-grade MLOps pipeline for live 24-hour Citi Bike demand forecasting using a recursive LightGBM engine, automated Champion/Challenger promotion, and a full-stack visualization dashboard.
+A production-grade MLOps pipeline for live 24-hour Citi Bike demand forecasting using a recursive LightGBM engine, automated Champion/Challenger model promotion, and a full-stack visualization dashboard.
 
-- Built a production MLOps system that automatically ingests NYC Citi Bike data, engineers **32 lag and temporal features**, trains a **LightGBM** model, and deploys hourly predictions — achieving **MAE of 5.1 rides/hour** and **24% WMAPE** across 1,051 held-out samples with zero manual intervention
-- Designed a champion/challenger promotion loop with **Hopsworks Model Registry** + **MLflow** — new models auto-promoted only if they strictly improve MAE over the incumbent
-- Engineered a **Recursive Bridge algorithm** walking hour-by-hour from last known data point using 28 lag features (lag_1 at **25% importance**) to bridge a ~20-day data publication lag for live forecasting
-- Deployed a **Next.js 14** dashboard on Vercel reading live Parquet predictions from S3 via **hyparquet** — eliminating a dedicated API server entirely, with an interactive NYC heatmap
+- Architected production MLOps system on **GitHub Actions** with 3 independent scheduled pipelines (feature engineering, training, hourly inference) forecasting NYC Citi Bike demand across top-3 stations — zero manual ops, runs continuously in CI
+- Engineered recursive bridge algorithm to overcome ~20-day Citi Bike publication lag — walks 480+ hourly steps via 28 autoregressive lag features, achieving **MAE of 2.94 trips/hour** on 24h **LightGBM** demand forecasts
+- Built Champion/Challenger model registry on **Hopsworks** + **MLflow** (DagsHub) with automated promotion gating (challenger promoted only on strict MAE improvement) — full experiment lineage, zero manual deployments
+- Designed disk-efficient streaming ETL for **GitHub Actions** runners — processes 12 months of Citi Bike CSVs one month at a time (download → engineer → delete), staying within 14GB runner disk limit
+- Eliminated Python backend by building zero-server **Next.js** frontend — API routes parse S3 Parquet directly via **hyparquet**, cutting infrastructure cost to $0 beyond Vercel and S3
+- Implemented monthly drift monitoring with **Evidently AI** — auto-generates train vs. holdout distribution reports each retraining cycle, surfacing feature and target drift without manual inspection
 
 > *Custom algorithm design + automated MLOps + live dashboard = a full product, not a notebook.*
 
@@ -185,20 +192,22 @@ A production-grade MLOps pipeline for live 24-hour Citi Bike demand forecasting 
 ---
 
 <details open>
-<summary><h3>🦙 Llama-3.2-3B Alpaca QLoRA — Instruction Fine-Tuning Pipeline</h3></summary>
+<summary><h3>🦙 LLaMA 3.2 3B SQL Fine-Tune (QLoRA)</h3></summary>
 
-**`QLoRA` `LoRA (PEFT)` `Llama-3.2` `BitsAndBytes` `SFTTrainer` `Hugging Face`**
+**`QLoRA` `LoRA (PEFT)` `Llama-3.2` `BitsAndBytes` `SFTTrainer` `PyTorch` `Hugging Face` `vLLM` `Modal` `Weights & Biases`**
 
-An end-to-end fine-tuning, evaluation, and deployment pipeline for Llama-3.2-3B-Instruct on 52K instruction examples — with rigorous before/after benchmarking.
+Fine-tuned Meta's Llama 3.2 3B on SQL generation using 4-bit QLoRA. Built full pipeline from data prep through eval, inference CLI, and Hub deployment.
 
-- Fine-tuned on 52K Alpaca examples via **QLoRA** (4-bit NF4 + double quantization, LoRA r=16 α=32 across all 7 attention/MLP projections), reducing perplexity **81.3%** (25.84 → 4.82) and improving ROUGE-L **+36.3%** (0.259 → 0.353)
-- Reduced GPU memory **~40%** via 4-bit NF4 + gradient checkpointing + paged **AdamW-8bit** — fine-tuning only **20M of 3B parameters (0.67%)** on a single 24GB RTX 4090 in ~2.5 hours
-- Implemented correct SFT loss masking via **apply_chat_template** + SFTTrainer `formatting_func`, ensuring causal LM loss is computed only over assistant tokens — a common pitfall in instruction tuning
-- Built a deterministic eval pipeline (seed=42, perplexity via teacher-forcing + ROUGE-L via greedy decoding) with versioned JSON artifacts and automated **HuggingFace Hub** deployment with real eval numbers injected into the model card
+- Fine-tuned Llama-3.2-3B on **19,000+ SQL samples** via **QLoRA** (4-bit NF4 + double quantization, LoRA r=16 α=32 across all 7 attention/MLP projections) — **94.6% perplexity drop** (35.1→1.88) while training only **0.67% of model weights** (~20M of 3B params)
+- ROUGE-L improved **0.909→0.986** on 200-sample held-out test, indicating near-exact SQL query generation vs. ground truth
+- Designed reproducible eval harness with locked data split (seed=42) ensuring identical train/eval sets across all runs; stored before/after results as versioned JSON artifacts
+- Built full inference stack: CLI tool with interactive REPL, base model comparison mode, and remote adapter loading from **HuggingFace Hub**
+- Deployed production inference server on **Modal** using **vLLM** for optimized throughput; built **Next.js** frontend for live query generation demos
+- Automated Hub publishing pipeline — injects real eval metrics into model card README before upload, ensuring published numbers always match actual results
 
 > *Most engineers fine-tune without rigorous evaluation. This pipeline treats it like a production ML system — reproducible, measured, and deployed with honest benchmarks.*
 
-[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/llama-3.2-3b-alpaca-qlora)
+[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/llama-3.2-3b-sql-qlora)
 
 </details>
 
@@ -226,9 +235,9 @@ An end-to-end fine-tuning, evaluation, and deployment pipeline for Llama-3.2-3B-
 
 ## 🎓 Education & Certifications
 
-🎓 **M.S. Data Science** — University at Buffalo, SUNY *(Dec 2025)*  
-🎓 **B.Tech Electronics & Communication** — VTU, India *(Jun 2022)*  
-🏅 **AI Engineering Core Track** — Udemy  
+🎓 **M.S. Data Science** — University at Buffalo, SUNY *(Dec 2025)*
+🎓 **B.Tech Electronics & Communication** — VTU, India *(Jun 2022)*
+🏅 **AI Engineering Core Track** — Udemy
 🏅 **AI Engineer Agentic Track: The Complete Agent & MCP Course** — Udemy
 
 ---
