@@ -124,54 +124,19 @@ Agentic compliance engine auditing organizational policies against 4 cybersecuri
 ---
 
 <details open>
-<summary><h3>💰 FinBuddy — AI-Powered Personal Finance Tracker</h3></summary>
+<summary><h3>⚡ VoltCast — Electricity Demand Forecasting</h3></summary>
 
-**`Next.js` `Supabase` `OpenAI GPT-4o` `pgvector` `OCR` `Serverless`**
+**`PyTorch Transformer` `MLflow` `Evidently AI` `Pandera` `GitHub Actions` `AWS S3` `Next.js`**
 
-Full-stack AI platform that turns physical receipts into semantically searchable financial records using GPT-4o Vision, pgvector embeddings, and natural language retrieval.
+24-hour-ahead US electricity demand forecasting with a from-scratch PyTorch Transformer and a serverless MLOps pipeline: hourly forecasts, drift-gated retraining, and a champion/challenger model registry.
 
-- Built **GPT-4o Vision** OCR pipeline extracting structured financial data from receipts; engineered semantic search with **1536-dim pgvector** embeddings and a custom `match_expenses` PL/pgSQL function with cosine similarity + ivfflat indexing
-- Reduced LLM API costs **90%** via SHA-256 snapshot hashing — cache hit on duplicate receipts skips the OpenAI call entirely; multi-tenant RLS enforced at the Supabase database layer
+- Built a from-scratch **PyTorch Transformer** for 24hr-ahead demand forecasting, orchestrated hourly via **GitHub Actions** with zero always-on infrastructure
+- Implemented **Pandera** schema validation on every ingestion run and **Evidently AI** drift detection to gate automated retraining — bad data or drifted inputs never reach the model
+- Established a champion/challenger registry on **MLflow** with automated promotion, backing a live **Next.js** dashboard served at **$0** backend cost
 
-> *RAG applied to personal finance — full-stack, production, with honest cost engineering.*
+> *Full MLOps discipline on a GitHub Actions budget — no always-on servers, no manual retraining.*
 
-[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/finbuddy)
-
-</details>
-
----
-
-<details open>
-<summary><h3>🏎️ F1 Apex Guardian — Real-Time Telemetry Monitoring & Anomaly Detection</h3></summary>
-
-**`GitHub Actions` `AWS S3` `MLflow` `DagsHub` `Isolation Forest` `Docker` `Streamlit`**
-
-Cloud-native MLOps system monitoring live F1 telemetry across 22+ concurrent driver streams with automated drift detection and unsupervised anomaly detection.
-
-- Deployed unsupervised **Isolation Forest** across **22+** concurrent telemetry streams; weekly Challenger pipeline with **Kolmogorov-Smirnov** drift detection and automated model promotion via DagsHub/MLflow with full lineage tracking
-- Optimized **Streamlit** dashboard with custom Docker containers and `@st.cache_resource` multi-layer caching — **85%** reduction in S3 data-pull latency
-
-> *The full MLOps loop — automated retraining, drift monitoring, and production deployment.*
-
-[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/f1_apex_guardian)
-
-</details>
-
----
-
-<details open>
-<summary><h3>🚲 Citi Bike Demand Forecaster — Live 24-Hour Prediction Pipeline</h3></summary>
-
-**`LightGBM` `GitHub Actions` `Evidently AI` `MLflow` `AWS S3` `Next.js` `Hopsworks`**
-
-Production MLOps pipeline forecasting NYC Citi Bike demand 24 hours ahead via a recursive LightGBM engine, automated Champion/Challenger promotion, and a zero-backend dashboard.
-
-- Engineered recursive bridge algorithm solving the ~20-day data publication lag — walks 480+ hourly steps via 28 autoregressive lag features, achieving **MAE of 2.94 trips/hour**; Champion/Challenger registry on **Hopsworks** + **MLflow** with zero manual deployments
-- Zero-server **Next.js** frontend parses S3 Parquet directly via hyparquet at **$0 backend cost**; monthly **Evidently AI** drift reports auto-generated on every retraining cycle
-
-> *Custom algorithm design + automated MLOps + live dashboard = a full product, not a notebook.*
-
-[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/bike_Taxi)
+[![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/voltcast)
 
 </details>
 
