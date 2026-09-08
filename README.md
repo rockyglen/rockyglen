@@ -223,21 +223,17 @@ Two-stage QLoRA post-training pipeline on Qwen2.5-7B over FinQA SEC filings — 
 
 <div align="center">
 
-[![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=glenlouis8&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=4&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C)](https://github.com/ryo-ma/github-profile-trophy)
-
-</div>
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=glenlouis8&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=1800)
+![Followers](https://img.shields.io/github/followers/glenlouis8?style=for-the-badge&logo=github&logoColor=white&color=5B8CFF&labelColor=0d1117)
 &nbsp;
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=glenlouis8&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800)
+![Stars](https://img.shields.io/github/stars/glenlouis8?style=for-the-badge&logo=github&logoColor=white&color=5B8CFF&labelColor=0d1117&affiliations=OWNER)
 
 </div>
 
 <div align="center">
 
-![GitHub Streak](https://streak-stats.demolab.com?user=glenlouis8&theme=tokyonight&hide_border=true)
+[![Top Languages](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=glenlouis8&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=1800)](https://github.com/glenlouis8)
+&nbsp;
+[![GitHub Streak](https://streak-stats.demolab.com?user=glenlouis8&theme=tokyonight&hide_border=true)](https://github.com/glenlouis8)
 
 </div>
 
