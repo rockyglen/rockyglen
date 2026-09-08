@@ -36,9 +36,9 @@ My background in **Data Reliability Engineering at Wipro** (2 years, Bengaluru) 
 |---|---|
 | 🤖 **Agentic AI Systems** | Built multi-agent orchestrators with LangGraph + MCP deployed against live AWS infra |
 | 📊 **Production MLOps** | End-to-end automated pipelines: ingestion → training → deployment → monitoring |
-| 🔍 **RAG & LLM Engineering** | 96.7% Faithfulness on compliance RAG system evaluated with RAGAS across 33 adversarial Qs |
-| ☁️ **Cloud & Infrastructure** | AWS (IAM, S3, EC2, VPC), Docker, Terraform, GitHub Actions CI/CD |
-| 🧬 **Fine-Tuning** | SFT + DPO alignment pipeline: 0.3% → 56.5% accuracy on FinQA; 95.9% SQL execution accuracy |
+| 🔍 **RAG & LLM Engineering** | 97.8% Faithfulness · 100% Context Recall on compliance CRAG, RAGAS across 32 Qs, cross-family LLM judge |
+| ☁️ **Cloud & Infrastructure** | AWS (IAM, S3, EC2, VPC, RDS, Lambda, CloudTrail), Docker, Terraform, GitHub Actions CI/CD |
+| 🧬 **Fine-Tuning** | QLoRA SFT + DPO on Qwen2.5-7B: 52.2% → 59.2% on FinQA official test (n=1147); 95.9% SQL execution accuracy |
 | 🧬 **Rare Skill Set** | LangGraph · MCP · CRAG · QLoRA SFT+DPO — expertise most teams are still building toward |
 
 ---
@@ -90,11 +90,12 @@ My background in **Data Reliability Engineering at Wipro** (2 years, Bengaluru) 
 
 **`LangGraph` `MCP` `AWS IAM/S3/EC2/VPC/RDS/Lambda/CloudTrail` `Google Gemini` `Human-in-the-Loop` `FastAPI` `Terraform`**
 
-A full-stack agentic security platform — 8 parallel specialist sub-agents scan an AWS account, generate a findings report, pause for human approval, then auto-remediate every vulnerability and verify the fixes held.
+A full-stack agentic security platform — 8 parallel specialist sub-agents scan an AWS account, generate a findings report, pause for human approval, then auto-remediate across 6 services in parallel and re-audit only the touched resources to confirm the fixes held.
 
-- Architected 8-parallel-agent orchestration using **LangGraph** + **ThreadPoolExecutor** across IAM, S3, EC2, VPC, RDS, Lambda, CloudTrail, and Security Groups with a mandatory human approval gate before any remediation fires — scan cost **~$0.02** via Gemini Flash, **8 CIS Benchmark controls** tracked per-scan
-- Engineered a custom async bridge: MCP server runs as a subprocess (JSON-RPC over stdio), background daemon thread owns a dedicated **asyncio** event loop, each tool wrapped with `asyncio.run_coroutine_threadsafe` so LangGraph's synchronous ToolNode can call async AWS APIs without event-loop conflicts
-- Instrumented every sub-agent with **Langfuse** for per-agent trace-level observability — latency, token counts, and tool call outcomes visible per span across all 8 agents
+- Architected 8-parallel-agent orchestration using **LangGraph** across IAM, S3, EC2, VPC, RDS, Lambda, CloudTrail, and Security Groups with a mandatory human approval gate before any remediation fires — each check mapped to one of **8 CIS AWS Foundations Benchmark controls**, live compliance score updates post-remediation
+- Reduced per-scan LLM cost to **$0.02** (~80% savings) by passing the auditor's final summary to the report generator instead of the full tool-call history; measured in **LangSmith**, which also gives per-agent observability and hallucination debugging
+- Engineered async **MCP** bridge letting synchronous **LangGraph** nodes call async AWS tools without blocking; migrated scan execution to **Celery** + **Redis** with pub/sub streaming live output and a `blpop` approval gate (30-min auto-abort); credentials **Fernet**-encrypted at rest with a 30-min inactivity purge
+- Provisioned **Terraform** IaC test environment with 8 deliberately vulnerable AWS resources; **28-test** pytest suite with **moto** mocking, no external services required; audited and fixed 4 security defects in the platform itself, including an IAM self-escalation path
 
 > *Not a chatbot. A working autonomous agent operating on real infrastructure with safety controls.*
 
@@ -111,9 +112,9 @@ A full-stack agentic security platform — 8 parallel specialist sub-agents scan
 
 Agentic compliance engine auditing organizational policies against 4 cybersecurity frameworks simultaneously: NIST CSF 2.0, NIST SP 800-53, ISO 27001:2022, and SOC 2.
 
-- Engineered **Corrective RAG** pipeline with LLM-as-judge document grading and autonomous query reformulation; parallelized retrieval across all 4 framework indexes via `asyncio.gather` — worst-case grading latency equals 1 LLM call regardless of chunk count
-- Intent-based semantic router cuts unnecessary LLM calls by **~40%**; semantic cache in a second Qdrant collection (cosine ≥ 0.93) delivers near-instant responses on repeated queries at zero LLM cost
-- Automated **RAGAS** eval harness across **33 adversarial questions** — Faithfulness **96.7%** · Context Recall **100%** — runs on every build to catch regressions
+- Engineered **Corrective RAG** on **LangGraph**: 4 concurrent per-framework retrievals via ThreadPoolExecutor, `asyncio.gather` document grading, and a query transformer that rewrites failed queries in domain terminology and loops back up to 3 times
+- Two-tier semantic router (whole-word keyword pre-filter, then LLM classifier) skips obvious input without an LLM call; semantic cache in a second Qdrant collection (cosine ≥ 0.93) skips the entire graph on near-duplicate queries at zero LLM cost
+- Automated **RAGAS** eval across **32 questions** spanning all 4 frameworks — Faithfulness **97.8%** · Context Recall **100%**; cross-family **LLM-as-judge** (Claude grading Gemini) caught a verbosity defect the same-family judge had masked at a perfect score
 
 > *Compliance automation with measurable, auditable accuracy across 4 frameworks simultaneously.*
 
@@ -126,13 +127,13 @@ Agentic compliance engine auditing organizational policies against 4 cybersecuri
 <details open>
 <summary><h3>⚡ VoltCast — Electricity Demand Forecasting</h3></summary>
 
-**`PyTorch Transformer` `MLflow` `Evidently AI` `Pandera` `GitHub Actions` `AWS S3` `Next.js`**
+**`PyTorch` `Temporal Transformer` `MLflow` `Evidently` `Pandera` `GitHub Actions` `AWS S3` `Next.js` `EIA API`**
 
-24-hour-ahead US electricity demand forecasting with a from-scratch PyTorch Transformer and a serverless MLOps pipeline: hourly forecasts, drift-gated retraining, and a champion/challenger model registry.
+24-hour-ahead electricity demand forecasting for CAL, TEX, PJM and MISO with a from-scratch PyTorch Transformer and a fully serverless MLOps pipeline.
 
-- Built a from-scratch **PyTorch Transformer** for 24hr-ahead demand forecasting, orchestrated hourly via **GitHub Actions** with zero always-on infrastructure
-- Implemented **Pandera** schema validation on every ingestion run and **Evidently AI** drift detection to gate automated retraining — bad data or drifted inputs never reach the model
-- Established a champion/challenger registry on **MLflow** with automated promotion, backing a live **Next.js** dashboard served at **$0** backend cost
+- Built a from-scratch **PyTorch** Temporal Transformer (no Trainer abstractions) — ingests 168 real hours, emits all 24 forecast hours in one shot to avoid recursive error compounding; beat the naive baseline by **24–40%** across all four grid regions, **1,050 MW MAE** (3.24% MAPE) on California
+- Ran a three-way ablation (naive, from-scratch LSTM, Transformer) on an untouched 15% test set per region — the LSTM loses to naive everywhere, isolating architecture as the source of the win
+- Fully serverless pipeline on **GitHub Actions** (hourly forecast, weekly retrain) pulling live **EIA API** demand, **Pandera** data contracts, **MLflow** champion/challenger gated at >1%, **Evidently** K-S drift triggering retrains, ~**$0 backend cost**
 
 > *Full MLOps discipline on a GitHub Actions budget — no always-on servers, no manual retraining.*
 
@@ -147,10 +148,10 @@ Agentic compliance engine auditing organizational policies against 4 cybersecuri
 
 **`QLoRA` `LoRA (PEFT)` `Llama-3.2` `BitsAndBytes` `SFTTrainer` `PyTorch` `Hugging Face` `vLLM` `Modal` `Weights & Biases`**
 
-Fine-tuned LLaMA 3.2 3B on SQL generation using 4-bit QLoRA. Eval goes beyond ROUGE-L — generated SQL is executed against a live database to measure functional correctness.
+Fine-tuned LLaMA 3.2 3B on 78k Text-to-SQL examples using 4-bit QLoRA. Eval goes beyond ROUGE-L — generated SQL is executed against a live database to measure functional correctness.
 
-- Fine-tuned on **19,000+ SQL samples** via **QLoRA** (4-bit NF4, LoRA r=16 α=32 across all 7 attention/MLP projections) in ~2.5hrs on a single RTX 4090 — training only **0.67% of model weights**; perplexity dropped **81.3%** (25.84→4.82), ROUGE-L improved 0.259→0.353
-- Achieved **95.9% SQL execution accuracy** (47/49 samples) running generated queries against a live database on Modal — functional correctness, not surface similarity
+- Fine-tuned on **78k Text-to-SQL examples** via **QLoRA** (4-bit NF4, LoRA adapters across all 7 attention/MLP projections) in ~2.5hrs on a single RTX 4090 — training only **20M of 3B weights**; perplexity dropped **35.07 → 1.88** (94.6% reduction), ROUGE-L rose **0.909 → 0.986** on a 3,929-example held-out split
+- Achieved **95.9% SQL execution accuracy** (47/49) running generated queries against a live SQLite database and comparing result sets — functional correctness, not surface similarity
 - Deployed production inference server on **Modal** using **vLLM**; automated Hub publishing pipeline injects real eval metrics into the model card before upload
 
 > *Most engineers report BLEU/ROUGE. This pipeline tests whether the SQL actually runs and returns the right answer.*
@@ -162,17 +163,17 @@ Fine-tuned LLaMA 3.2 3B on SQL generation using 4-bit QLoRA. Eval goes beyond RO
 ---
 
 <details open>
-<summary><h3>🧮 FinReason — Financial QA Fine-Tuning with SFT + DPO Alignment</h3></summary>
+<summary><h3>🧮 FinReason — Financial QA Fine-Tuning with SFT + DPO and AWQ Serving</h3></summary>
 
-**`Qwen2.5-7B-Instruct` `QLoRA` `SFTTrainer` `DPOTrainer` `TRL` `AWS SageMaker` `Weights & Biases` `Hugging Face`**
+**`Qwen2.5-7B-Instruct` `QLoRA` `SFTTrainer` `DPOTrainer` `TRL` `AWQ` `vLLM` `Prometheus` `Grafana` `Weights & Biases` `Hugging Face`**
 
-Two-stage SFT + DPO alignment pipeline on Qwen2.5-7B for multi-step financial reasoning over SEC earnings reports. Went from near-zero to production-grade accuracy on FinQA.
+Two-stage QLoRA post-training pipeline on Qwen2.5-7B over FinQA SEC filings — SFT then DPO alignment, AWQ 4-bit compression, and vLLM serving on an A40, measured end to end on the official 1,147-example test split.
 
-- SFT (SFTTrainer, 4-bit QLoRA) teaches chain-of-thought reasoning format on FinQA data; DPO (DPOTrainer) aligns outputs using auto-generated preference pairs — accuracy **0.3% → 56.5%** (+56.2pp) on FinQA benchmark
-- Automated preference pair generator: SFT model produces candidate answers, scores against ground truth, constructs (chosen, rejected) pairs for DPO without manual annotation; trained on **AWS SageMaker** with full **W&B** experiment tracking
-- Published fine-tuned adapter to **Hugging Face Hub** with model card documenting eval methodology, training config, and per-question-type accuracy breakdown
+- SFT (SFTTrainer, 4-bit QLoRA, 0.67% of weights) teaches chain-of-thought targets; DPO (DPOTrainer, beta 0.1) aligns on mined preference pairs — accuracy **52.2% → 59.2%** on the official **1,147-example** test split, within 2 points of the FinQANet baseline; perplexity **6.60 → 2.87**
+- Compressed the merged adapter to **AWQ** 4-bit (5.2 GB) calibrated on real FinQA prompts; scored the live **vLLM** endpoint on all 1,147 examples and quantified the **4.1pp** accuracy cost of compression
+- Load-tested the A40 **vLLM** server: **18.9 req/s** at 50 concurrent users, p99 1.5s, **0 failures** across 3,337 requests; **Prometheus** + **Grafana** capture ~**3,000 tok/s** throughput and 60ms TTFT; **30-test** CI on GitHub Actions gates the answer parser and accuracy floors
 
-> *SFT teaches the format. DPO fixes the reasoning. Together they turn a general LLM into a financial specialist.*
+> *SFT teaches the format. DPO fixes the reasoning. AWQ + vLLM ship it at 3,000 tok/s.*
 
 [![Repo](https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github)](https://github.com/glenlouis8/finreason)
 
@@ -180,17 +181,28 @@ Two-stage SFT + DPO alignment pipeline on Qwen2.5-7B for multi-step financial re
 
 ---
 
+## 🌐 Open Source
+
+- **[pythonnative/pythonnative](https://github.com/pythonnative/pythonnative)** — 4 merged PRs to the cross-platform Python-to-native runtime: re-exported a broken public `get_platform()` API (#48), concise `Response.__repr__` to stop dumping full HTTP bodies (#49), coverage for desktop platform detection (#68), `--help` text for positional platform args (#81)
+- **[langchain-ai/langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters/pull/626)** — open PR #626: `structuredContent` on an MCP tool result is silently dropped when `isError=True`, so structured error payloads never reach the model; root-caused the fix's constraint in `langchain-core` (`BaseTool.arun` hard-codes `artifact=None`) and threaded the artifact through a `ContextVar` + `arun` override
+
+---
+
 ## 💼 Experience
 
+**🤖 AI Engineer** · The Josh James Team — Keller Williams · Buffalo, NY *(Apr 2026 – Present)*
+- Built a **Gemini** multimodal OCR pipeline (**FastAPI** on Render) parsing property PDFs into Google Sheets, eliminating manual real-estate contract data entry for the KW transaction coordinator team
+
 **🔬 Volunteer Research Assistant** · University at Buffalo — Visual Computing Lab · Buffalo, NY *(Mar 2026 – Present)*
-- Engineered Pearson correlation pipeline across **2.1M** DAM price rows and 26,304 weather records for NYPA's Virtual Power Plant research, identifying transmission congestion as dominant LBMP driver (r=0.89–0.95 across all 5 nodes)
-- Implemented percentile-based outlier detection (p1/p99) across **32** Long Island transmission nodes, flagging **1,312** high-price hours and attributing spikes to east-end transmission bottleneck and hour-of-day capacity constraints
+- Built the node-level analysis layer for NYPA's **Virtual Power Plant** siting study — collapsed **85** Long Island generators into **32** transmission nodes, resampled 5-min RTM to hourly, producing the DAM + RTM node-hourly panel (2023–Jun 2026) every downstream analysis reads
+- Correlation pipeline over **2.1M** price rows and 26k weather records identified transmission congestion as the dominant LBMP driver (r ≈ −0.83 at top nodes); all four team-standard outlier methods (P99, P95, Q3+1.5×IQR, Q3+3×IQR) surfaced a peak of **$1,323/MWh** at Huntington
+- Reconstructed Long Island geography from price data alone — node-to-node de-meaned price co-movement distance matrix + **MDS** recovered longitude at **r² = 0.76** and latitude at **r² = 0.50** with no coordinates as features, replicating the Novembre et al. 2008 *genes-mirror-geography* result on electricity markets; scaled statewide to **563** NYS generators → **232** nodes and **7.4M** node-hourly rows, work under review for possible publication
 
 **🏥 Data Scientist Intern (Capstone)** · Nissha Medical Technologies · Buffalo, NY *(Aug–Dec 2025)*
 - Engineered real-time Computer Vision quality control system using **YOLOv8 Nano** + **OpenCV** to inspect **30M+ daily tickets**, achieving **88.1% mAP** and **sub-100ms inference**
 - Developed defect analysis pipeline capturing **86.67%** of critical micro-defects at **88.45% precision**; established dimensional drift warning thresholds (Delta E > 15) for predictive maintenance
 
-**⚙️ Lead Data Reliability Engineer** · Wipro Technologies · Bengaluru, India *(May 2022–Aug 2024)*
+**⚙️ Data Quality Engineer** · Wipro Technologies · Bengaluru, India *(May 2022–Aug 2024)*
 - Engineered Python automation suite replacing manual auditing across SQL Server → Snowflake migrations feeding downstream ML pipelines — programmatic validation of row counts, schema parity, and type consistency
 - Implemented source-to-target data integrity checks ensuring **100%** structural accuracy across full pipeline; reconciled Power BI KPIs against Snowflake ground truth to validate ML-consumed aggregates
 - Directed sub-team of 2 on SQL development and validation methodology; conducted technical reviews of test scenarios and automated validation scripts
@@ -201,6 +213,7 @@ Two-stage SFT + DPO alignment pipeline on Qwen2.5-7B for multi-step financial re
 
 🎓 **M.S. Data Science** — University at Buffalo, SUNY *(Dec 2025)*
 🎓 **B.Tech Electronics & Communication** — VTU, India *(Jun 2022)*
+🏅 **Introduction to Model Context Protocol · Claude 101 · Claude Code 101** — Anthropic
 🏅 **AI Engineering Core Track** — Udemy
 🏅 **AI Engineer Agentic Track: The Complete Agent & MCP Course** — Udemy
 
