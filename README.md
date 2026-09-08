@@ -231,8 +231,6 @@ Two-stage QLoRA post-training pipeline on Qwen2.5-7B over FinQA SEC filings — 
 
 <div align="center">
 
-[![Top Languages](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=glenlouis8&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=1800)](https://github.com/glenlouis8)
-&nbsp;
 [![GitHub Streak](https://streak-stats.demolab.com?user=glenlouis8&theme=tokyonight&hide_border=true)](https://github.com/glenlouis8)
 
 </div>
